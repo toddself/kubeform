@@ -18,7 +18,7 @@ function CloudAPI (options) {
     packageJson: require('../../package.json')
   }
   this.projectId = options.projectId
-  this.asyncReq = util.promisify(this.request.bind(this))
+  this.asyncReq = this.request.bind(this)
   common.Service.call(this, config, options)
 }
 
